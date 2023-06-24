@@ -43,17 +43,12 @@ node {
                 junit 'target/surefire-reports/*.xml'
             }
         }
-        // stage('Deploy') {
-        //     sh './jenkins/scripts/deliver.sh'
-        // }
         stage('Manual Approve') {
             input message: 'Lanjut ke tahap Deploy?'
         }
         stage('Deploy') {
             sh './jenkins/scripts/deliver.sh'
-            // Add a 1-minute sleep
             sleep time: 1, unit: 'MINUTES'
-            //sh './jenkins/scripts/kill.sh' 
         }
     }
 }
