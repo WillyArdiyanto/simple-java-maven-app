@@ -53,7 +53,7 @@ node {
             sh './jenkins/scripts/deliver.sh'
             // Add a 1-minute sleep
             sleep time: 1, unit: 'MINUTES'
-            sh './jenkins/scripts/kill.sh' 
+            //sh './jenkins/scripts/kill.sh' 
         }
     }
 }
