@@ -43,7 +43,11 @@ node {
                 junit 'target/surefire-reports/*.xml'
             }
         }
-        stage('Deliver') {
+        // stage('Deploy') {
+        //     sh './jenkins/scripts/deliver.sh'
+        // }
+        stage('Deploy') {
+            input message: 'Lanjut ke tahap Deploy?'
             sh './jenkins/scripts/deliver.sh'
         }
     }
